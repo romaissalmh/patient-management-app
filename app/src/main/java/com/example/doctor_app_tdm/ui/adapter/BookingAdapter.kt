@@ -31,14 +31,7 @@ class BookingAdapter (
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
             holder.bookingDate.text = data[position].bookingDate
             holder.bookingTime.text = "à "+data[position].bookingTime
-            holder.scanButton.setOnClickListener {
-                vm.bookingTime = data[position].bookingTime
-                vm.bookingDate = data[position].bookingDate
-                //open the scan qr fragment
 
-
-
-            }
 
         }
 
@@ -51,6 +44,5 @@ class BookingAdapter (
 class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val bookingDate = view.findViewById(R.id.bookingDate) as TextView
     val bookingTime = view.findViewById(R.id.bookingTime) as TextView
-    val scanButton = view.findViewById(R.id.scanButton) as Button
 
 }

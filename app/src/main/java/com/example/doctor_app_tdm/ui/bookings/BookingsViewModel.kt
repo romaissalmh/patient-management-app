@@ -9,8 +9,8 @@ import com.example.doctor_app_tdm.data.repositories.BookingRepository
 class BookingsViewModel : ViewModel() {
     private val TAG = "TAG-BookingsDisplayViewModel"
     var bookings=  MutableLiveData<ArrayList<Booking>>()
-    fun  getListBookings(id:String)  {
-        BookingRepository.getBookingsByDoctor(TAG,id) {
+    fun  getListBookings(id:String,token:String)  {
+        BookingRepository.getBookingsByDoctor(TAG,id,token) {
             Log.i(TAG, "view model here")
             bookings.value = it?.value
         }

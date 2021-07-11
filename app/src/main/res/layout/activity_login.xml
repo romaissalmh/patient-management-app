@@ -73,7 +73,7 @@
         android:hint="Numéro de téléphone"
         android:inputType="phone"
         android:paddingLeft="@dimen/fab_margin"
-        android:textColor="@color/text_grey"
+        android:textColor="@color/white"
         android:textColorHint="@color/text_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,12 +93,22 @@
         android:hint="Mot de passe              "
         android:inputType="textPassword"
         android:paddingLeft="@dimen/fab_margin"
-        android:textColor="@color/text_grey"
+        android:textColor="@color/white"
         android:textColorHint="@color/text_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
-
+    <ImageView
+        android:id="@+id/ivShowHidePass"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:elevation="3dp"
+        android:src="@drawable/ic_show_password"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword"
+        tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_login"

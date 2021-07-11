@@ -8,10 +8,9 @@ import retrofit2.http.*
 
 interface ServiceProvider {
     @GET("api/bookings/byDoctor/{id}")
-    fun getBookingsByDoctor(@Path("id") id:String? /*,@Header("Authorization") token: String*/ ): Call<List<Booking>>
+    fun getBookingsByDoctor(@Path("id") id:String? ,@Header("authorization") token: String): Call<List<Booking>>
 
     @POST("api/doctors/login")
-    fun loginDoctor(  @Body info: LoginBody/*,@Header("Authorization") token: String*/ ): Call<LoginResponse>
-
+    fun loginDoctor(  @Body info: LoginBody ): Call<LoginResponse>
 
 }

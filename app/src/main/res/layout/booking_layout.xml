@@ -21,21 +21,25 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
 
             <TextView
                 android:id="@+id/bookingDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:ems="10"
                 android:fontFamily="@font/gothambook"
                 android:gravity="center_horizontal"
+                android:text="2021-07-08"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.055"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <TextView
                 android:id="@+id/bookingTime"
@@ -44,27 +48,31 @@
                 android:layout_marginStart="36dp"
                 android:layout_marginLeft="36dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:ems="10"
                 android:fontFamily="@font/gothambook"
                 android:inputType="none"
+                android:text="à 10:30"
                 android:textColor="@color/bleu_fonce"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/bookingDate"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <Button
-                android:id="@+id/scanButton"
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="@string/scanner_button"
-                android:textAllCaps="false"
-                app:backgroundTint="@color/bleu_fonce"
+                android:fontFamily="@font/gothambold"
+                android:text="Consultation patient"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bookingDate" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

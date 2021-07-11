@@ -2,6 +2,7 @@ package com.example.doctor_app_tdm.ui.bookings
 
 import android.R.attr
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,14 +17,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.doctor_app_tdm.R
 import com.example.doctor_app_tdm.ui.adapter.BookingAdapter
 import com.example.doctor_app_tdm.ui.viewModel.BookingVM
+import com.example.doctor_app_tdm.utils.sharedPrefFile
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.bookings_fragment.*
 
 
 class Bookings : Fragment() {
     private val TAG = "_BookingsMedFragment"
-   // var bookingRecyclerView = view?.findViewById(R.id.bookingRecyclerView) as RecyclerView
-    var id : String = "60e0356ddd0198b2ee8eba3a"
     companion object {
         fun newInstance() = Bookings()
     }
@@ -39,10 +39,18 @@ class Bookings : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        val preferences = requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+
+        val token = preferences.getString("token", "defaultvalue")
+        val userID = preferences.getString("userID", "defaultvalue")
 
         viewModel = ViewModelProvider(requireActivity()).get(BookingsViewModel::class.java)
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-        viewModel.getListBookings(id)
+        if (userID != null) {
+            if (token != null) {
+                viewModel.getListBookings(userID,token)
+            }
+        }
         viewModel.bookings.observe(viewLifecycleOwner, Observer {
             checkList()
         })

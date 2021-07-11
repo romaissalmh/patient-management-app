@@ -25,11 +25,7 @@
         android:label="@string/title_dashboard"
         tools:layout="@layout/bookings_fragment" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.doctor_app_tdm.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+
     <fragment
         android:id="@+id/bookingsDetails"
         android:name="com.example.doctor_app_tdm.ui.bookingDetails.BookingsDetails"

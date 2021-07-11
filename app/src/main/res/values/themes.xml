@@ -7,7 +7,7 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/gris_clair</item>
         <item name="colorSecondaryVariant">@color/gris_clair</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/gris_clair</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

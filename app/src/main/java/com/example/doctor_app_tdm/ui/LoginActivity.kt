@@ -9,9 +9,11 @@ import com.example.doctor_app_tdm.MainActivity
 import com.example.doctor_app_tdm.R
 import com.example.doctor_app_tdm.data.repositories.LoginRepository
 import com.example.doctor_app_tdm.utils.sharedPrefFile
+import com.example.doctor_app_tdm.utils.showPassword
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity: AppCompatActivity() {
+    var mIsShowPass = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +45,16 @@ class LoginActivity: AppCompatActivity() {
             // startActivity(intent)
 
         }
+
+
+        //show and hide password 1
+        ivShowHidePass.setOnClickListener {
+            mIsShowPass = !mIsShowPass
+            showPassword(editTextTextPassword, ivShowHidePass, mIsShowPass)
+        }
+        showPassword(editTextTextPassword, ivShowHidePass, mIsShowPass)
+        //show and hide password 2
+
 
     }
 

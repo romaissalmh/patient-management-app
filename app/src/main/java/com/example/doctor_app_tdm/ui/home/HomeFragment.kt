@@ -1,5 +1,7 @@
 package com.example.doctor_app_tdm.ui.home
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,8 +14,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.doctor_app_tdm.R
 import com.example.doctor_app_tdm.databinding.FragmentHomeBinding
+import com.example.doctor_app_tdm.ui.LoginActivity
 import com.example.doctor_app_tdm.ui.viewModel.BookingDetailsVM
 import com.example.doctor_app_tdm.utils.fromJson
+import com.example.doctor_app_tdm.utils.idUser
+import com.example.doctor_app_tdm.utils.sharedPrefFile
 import com.google.gson.Gson
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -44,11 +49,12 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        val preferences = requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+
         scanButton.setOnClickListener(){
-
             // Code pour scanner le qrcode
-
-             bookingViewModel = ViewModelProvider(requireActivity()).get(BookingDetailsVM::class.java)
+            Log.i(TAG,"userID"+ idUser)
+            bookingViewModel = ViewModelProvider(requireActivity()).get(BookingDetailsVM::class.java)
 
             val integrator = IntentIntegrator.forSupportFragment(this@HomeFragment)
 
@@ -56,9 +62,20 @@ class HomeFragment : Fragment() {
             integrator.setPrompt("Scan QR code")
             integrator.setBeepEnabled(false)
             integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-
             integrator.initiateScan()
 
+        }
+        button_logout.setOnClickListener {
+            //deconnexion
+            with(preferences?.edit()) {
+                this?.putString("token", "")
+                this?.putBoolean("connected", false)
+                this?.apply()
+            }
+            val myIntent = Intent(requireActivity(), LoginActivity::class.java)
+            requireActivity().startActivity(myIntent)
+
+            (context as Activity).finish()
         }
 
     }
@@ -87,8 +104,8 @@ class HomeFragment : Fragment() {
                     bookingViewModel.heightPatient = bookingDetailsModel.heightPatient
                     bookingViewModel.weightPatient = bookingDetailsModel.weightPatient
                     bookingViewModel.personalDiseasePatient = bookingDetailsModel.personalDiseasePatient
-                    bookingViewModel.genderPatient = bookingViewModel.genderPatient
-                    bookingViewModel.phonePatient = bookingViewModel.phonePatient
+                    bookingViewModel.genderPatient = bookingDetailsModel.genderPatient
+                    bookingViewModel.phonePatient = bookingDetailsModel.phonePatient
                     findNavController().navigate(R.id.action_navigation_home_to_bookingsDetails)
 
                 }

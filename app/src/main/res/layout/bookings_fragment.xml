@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gris_fonce"
     tools:context=".ui.bookings.Bookings">
 
     <TextView
@@ -11,8 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gothambook"
+        android:paddingTop="10dp"
         android:gravity="center_horizontal"
-        android:text="@string/title_home"
+        android:text="@string/rendez_vous"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:background="@color/bleu_fonce"
+        android:background="@color/gris_fonce"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

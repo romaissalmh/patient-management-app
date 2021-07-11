@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.doctor_app_tdm.data.api.ServiceBuilder
 import com.example.doctor_app_tdm.data.api.ServiceProvider
 import com.example.doctor_app_tdm.data.model.Booking
+import com.example.doctor_app_tdm.utils.userToken
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,10 +21,11 @@ class BookingRepository {
         fun getBookingsByDoctor(
             TAG: String,
             id:String,
-            //token:String,
+            token:String,
             onResult: (MutableLiveData<ArrayList<Booking>>?) -> Unit
         ) {
-            val call = api.getBookingsByDoctor(id)
+
+            val call = api.getBookingsByDoctor(id, "Basic $token")
 
             call.enqueue(object : Callback<List<Booking>> {
                 override fun onResponse(

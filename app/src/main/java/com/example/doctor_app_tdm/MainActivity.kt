@@ -15,9 +15,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        PushNotifications.start(applicationContext, "ffc236f8-636e-4199-83de-048d38b1c0ab");
-        PushNotifications.addDeviceInterest("hello");
+
+        PushNotifications.start(applicationContext, "ffc236f8-636e-4199-83de-048d38b1c0ab")
+        PushNotifications.addDeviceInterest("hello")
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

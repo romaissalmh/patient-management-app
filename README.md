@@ -8,11 +8,11 @@ View Appointment Module: Doctor can view the list of appointement along with dat
 
 Notification Module: Appointment’s notification for doctor when an an appointment is created.
 
-#Tech Stack
+# Tech Stack
 
 Kotlin,Gradle, MongoDB, Node.js
 
 #
 
 
-# Please star :start the project if you like it.
+# Please star :star the project if you like it.

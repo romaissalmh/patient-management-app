@@ -15,4 +15,4 @@ Kotlin,Gradle, MongoDB, Node.js
 #
 
 
-# Please star :star the project if you like it.
+# Please star :star2: the project if you like it.

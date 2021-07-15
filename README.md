@@ -14,8 +14,8 @@ Kotlin,Gradle, MongoDB, Node.js
 
 # A glance of the app
 
-![Alt smartmockups1](patient-management-app/app/src/main/res/drawable/smartmockups_2.png)
-![Alt smartmockups2](patient-management-app/app/src/main/res/drawable/smartmockups_1.png)
+![Alt smartmockups1](/app/src/main/res/drawable/smartmockups_2.png)
+![Alt smartmockups2](/app/src/main/res/drawable/smartmockups_1.png)
 
 
 # Please star :star2: the project if you like it.

@@ -12,7 +12,7 @@ Notification Module: Appointment’s notification for doctor when an an appointm
 
 Kotlin,Gradle, MongoDB, Node.js
 
-# A glance of the app
+# A glance at the app
 
 ![Alt smartmockups1](/app/src/main/res/drawable/smartmockups_2.png)
 ![Alt smartmockups2](/app/src/main/res/drawable/smartmockups_1.png)
